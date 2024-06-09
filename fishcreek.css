@@ -192,7 +192,7 @@ to { opacity:1;}
 
 
 @media (min-width: 830px) {
-header{background: #000066 url(bigfish.gif) no-repeat center;
+header{background: #000066 url(Media/bigfish.gif) no-repeat center;
 color: #FFFFFF;
 font-family: serif;
 height: 120px;
