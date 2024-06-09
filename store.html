@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title> Fish Creek Animal Clinic Store </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Here is a store where you can buy our brand merchandise">
+		<link rel="stylesheet" href="fishcreek.css">
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				// Event listeners for quantity input fields
+				document.getElementById('tQuant').addEventListener('input', updatePrice);
+				document.getElementById('sQuant').addEventListener('input', updatePrice);
+				
+				updatePrice();
+				
+				// Function to update price based on quantity
+				function updatePrice() {
+					let tQuant = parseFloat(document.getElementById('tQuant').value);
+					let sQuant = parseFloat(document.getElementById('sQuant').value);
+					if (isNaN(tQuant) || tQuant < 0 || tQuant > 10000) {
+						document.getElementById('tQuant-error').textContent = 'Invalid quantity';
+						document.getElementById('place-order-btn').disabled = true;
+						return;
+						} else {
+						document.getElementById('tQuant-error').textContent = '';
+					}
+					if (isNaN(sQuant) || sQuant < 0 || sQuant > 10000) {
+						document.getElementById('sQuant-error').textContent = 'Invalid quantity';
+						document.getElementById('place-order-btn').disabled = true;
+						return;
+						} else {
+						document.getElementById('sQuant-error').textContent = '';
+					}
+					if (tQuant < 0 || sQuant < 0) { // Check for negative quantities
+						document.getElementById('tQuant-error').textContent = 'Quantity cannot be negative';
+						document.getElementById('sQuant-error').textContent = 'Quantity cannot be negative';
+						document.getElementById('place-order-btn').disabled = true;
+						return;
+					}
+					// Calculate total price for each item
+					let tPrice = tQuant * 19.95;
+					let sPrice = sQuant * 29.95;
+					// Display total price for each item
+					document.getElementById('insertTT').textContent = tPrice.toFixed(2);
+					document.getElementById('insertST').textContent = sPrice.toFixed(2);
+					// Calculate and display total cost
+					let totalCost = tPrice + sPrice;
+					document.getElementById('insertCT').textContent = totalCost.toFixed(2);
+					if (totalCost > 0) {
+						document.getElementById('place-order-btn').disabled = false;
+						} else {
+						document.getElementById('place-order-btn').disabled = true;
+					}
+				}
+				
+			});
+		</script>
+	</head>
+	<div id="wrapper">
+		<header>
+			<a href="index.html"><h1> Fish Creek Animal Hospital</h1></a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="index.html"> Home </a></li>
+				<li><a href="askvet.html"> Ask the Vet </a></li>
+				<li><a href="services.html"> Services </a></li>
+				<li><a href="contact.html"> Contact </a></li>
+				<li><a href="stories.html"> Stories </a></li>
+				<li><a href="about.html"> About </a></li>
+				<li><a href="survey.html"> Survey </a></li>
+				<li><a href="store.html"> Store </a></li>
+			</ul>
+		</nav>
+		<main>
+			<h2> Shop at Fish Creek Animal Clinic </h2>
+			<div id="flow2">
+				<section>
+					<h3>Fish Creek Tote Bag</h3>
+					<img src="fishtote.gif" alt="Fish Creek Tote Bag">
+					<p>Carry your pet supplies and accessories in a special tote from Fish Creek. 100% cotton. <b>$14.95</b></p>
+				</section>
+				<section>
+					<h3>Fish Creek Sweatshirt</h3>
+					<img src="fishsweat.gif" alt="Fish Creek Sweatshirt">
+					<p>A Fish Creek sweatshirt will warm you up on cool morning walks with your pet. 100% cotton. Size XL. <b>$29.95</b></p>
+				</section>
+				<section>
+					<table>
+						<tr>
+							<th><span class="category">Description</span><br></th>
+							<th><span class="category">Quantity</span><br></th>
+							<th><span class="category">Price</span><br></th>
+							<th><span class="category">Cost</span><br></th>
+						</tr>
+						<tr>
+							<th><span class="category">Fish Creek Tote</span><br></th>
+							<th><span class="category">
+								<input type="number" name="tQuant" id="tQuant" min="0" max="10000" class="store-number-input" value="0" required>
+								<br><span class="error-message" id="tQuant-error"></span> 
+							</span><br></th>
+							<th><span class="category">19.95</span><br></th>
+							<th><span class="category" id="insertTT">0.00</span><br></th>
+						</tr>
+						<tr>
+							<th><span class="category">Fish Creek Sweatshirt</span><br></th>
+							<th><span class="category">
+								<input type="number" name="sQuant" id="sQuant" min="0" max="10000" class="store-number-input" value="0" required>
+								<br><span class="error-message" id="sQuant-error"></span>
+							</span><br></th>
+							<th><span class="category">29.95</span><br></th>
+							<th><span class="category" id="insertST">0.00</span><br></th>
+						</tr>
+						
+						<tr>
+							<th><span class="category">Total Cost</span><br></th>
+							<th><span class="category"></span><br></th>
+							<th><span class="category"></span><br></th>
+							<th><span class="category"> <p id="insertCT"></p></span><br></th>
+						</tr>
+					</table>
+					<a href="https://webdevbasics.net/cart.html"><button id="place-order-btn"> Place Order </button> </a>
+				</section>
+			</div>
+		</main>
+		<br>
+		<footer>
+			Copyright &copy; 2016 Fish Creek Animal Hospital<br>
+			<a href="mailto:camplin.alexander@gmail.com">camplin.alexander@gmail.com</a>
+		</footer>
+	</div>
+</html>

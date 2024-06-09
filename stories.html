@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title> Fish Creek Animal Clinic Stories </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Here are some stories from the animals that we managed to help">
+		<link rel="stylesheet" href="fishcreek.css">
+	</head>
+	<div id="wrapper">
+		<header>
+			<a href="index.html"><h1> Fish Creek Animal Hospital</h1></a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="index.html"> Home </a></li>
+				<li><a href="askvet.html"> Ask the Vet </a></li>
+				<li><a href="services.html"> Services </a></li>
+				<li><a href="contact.html"> Contact </a></li>
+				<li><a href="stories.html"> Stories </a></li>
+				<li><a href="about.html"> About </a></li>
+				<li><a href="survey.html"> Survey </a></li>
+				<li><a href="store.html"> Store </a></li>
+			</ul>
+		</nav>
+		<main>
+			<h2> Stories From Our Patients </h2>
+			<p> Some of our patients have agreed to have their stories written about. If you are feeling unsure about our service then please 
+				take a minute to read about what they have gone through and how they are doing now. 
+			</p>
+			<br>
+			<img src="cat1.jpeg" alt="Snippy" width="460" height="277" align="right">
+			<p class="story-text" style="font-family: Verdana, Arial, sans-serif; font-size: 1.1em;"> Snippy is the beloved cat of Edna Cayford, a driver 
+				for horse-drawn carriages in Stanley Park. A short while ago, Snippy's appetite changed dramatically, and he began losing weight rapidly. 
+				Concerned, Edna brought Snippy to our clinic for an evaluation. After a thorough examination, we diagnosed Snippy with diabetes. Catching it 
+				early was crucial, as it allowed us to start a treatment plan promptly. With dedicated care and regular insulin injections, Snippy's health 
+				has improved significantly. Despite facing this challenge, Snippy remains an active and cherished member of Edna's family.
+			</p>
+			<button class="toggle-button">Read More</button>
+		</main>
+		<footer>
+			Copyright &copy; 2016 Fish Creek Animal Hospital<br>
+			<a href="mailto:camplin.alexander@gmail.com">camplin.alexander@gmail.com</a>
+		</footer>
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const toggleButtons = document.querySelectorAll('.toggle-button');
+			
+			toggleButtons.forEach(button => {
+				button.addEventListener('click', () => {
+					const story = button.previousElementSibling;
+					story.classList.toggle('expanded');
+					if (button.textContent === 'Read More') {
+						button.textContent = 'Show Less';
+						} else {
+						button.textContent = 'Read More';
+					}
+				});
+			});
+		});
+	</script>
+</html>

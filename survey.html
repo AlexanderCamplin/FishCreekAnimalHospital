@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title> Fish Creek Animal Clinic Survey </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A survey to allow us to get to know you and our community better">
+		<link rel="stylesheet" href="fishcreek.css">
+		<script src="surveyscript.js" defer></script>
+	</head>
+	<div id="wrapper">
+		<header>
+			<a href="index.html"><h1> Fish Creek Animal Hospital</h1></a>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="index.html"> Home </a></li>
+				<li><a href="askvet.html"> Ask the Vet </a></li>
+				<li><a href="services.html"> Services </a></li>
+				<li><a href="contact.html"> Contact </a></li>
+				<li><a href="stories.html"> Stories </a></li>
+				<li><a href="about.html"> About </a></li>
+				<li><a href="survey.html"> Survey </a></li>
+				<li><a href="store.html"> Store </a></li>
+			</ul>
+		</nav>
+		<main>
+			<h2> Animal Survey </h2> 
+			<p> Please complete the survey so we can learn more about our local pet owners. </p><br>
+			<div id="wrapperF">
+				<form name="survey" method="post" id="survey" action="https://webdevbasics.net/scripts/javajam8.php">
+					<label for="myName2">Name: </label> <input type="text" name="myName2" id="myName2" required>
+					<label for="myEmail2">E-mail: </label> <input type="text" name="myEmail2" id="myEmail2" required>
+					<legend> Select your favorite animal:</legend>
+					<fieldset>
+						<label><input type="radio" value="Dog" checked="checked" name="Animal" id="Dog"> Dog</label><br>
+						<label><input type="radio" name="Animal" id="Cat" value="Cat"> Cat</label><br>
+						<label><input type="radio" name="Animal" id="Mouse" value="Mouse"> Mouse</label><br>
+						<label><input type="radio" name="Animal" id="Bird" value="Bird"> Bird</label><br>
+						<label><input type="radio" name="Animal" id="Hedgehog" value="Hedgehog"> Hedgehog</label><br>
+						<label><input type="radio" name="Animal" id="Rabbit" value="Rabbit"> Rabbit</label><br>
+						<label><input type="radio" name="Animal" id="Other" value="Other"> Other</label><br>
+					</fieldset>
+					<label for="myExplanation">Please explain why: </label> <textarea name="myExplanation" id="myExplanation" rows="2" cols="20" required> </textarea>
+					<label for="myAnswer">Are there any ways you can think of that will help us keep these animals safe and healthy?: </label> 
+					<textarea name="myAnswer" id="myAnswer" rows="2" cols="20" required> </textarea> <br>
+					<div id="form-feedback" style="color: red;"></div>
+					<button type="submit" id="mySubmit"> Send Now </button><br><br><br>
+				</form>
+			</div>
+		</main>
+		<footer>
+			Copyright &copy; 2016 Fish Creek Animal Hospital<br>
+			<a href="mailto:camplin.alexander@gmail.com">camplin.alexander@gmail.com</a>
+		</footer>
+	</div>
+</html>	
